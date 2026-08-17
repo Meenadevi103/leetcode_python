@@ -3,20 +3,26 @@ class Solution:
         # x=sorted(s)
         # y=sorted(t)
         # return x==y  
-        dict1={}
-        dict2={}
+        # dict1={}
+        # dict2={}
 
-        for i in s:
-            if i not in dict1:
-                dict1[i]=[1]
-            else:
-                dict1[i]+=[1]
-        for j in t:
-            if j not in dict2:
-                dict2[j]=[1]
-            else:
-                dict2[j]+=[1]
-        if dict1==dict2:
-            return True
-        else:
-            return False    
+        # for i in s:
+        #     if i not in dict1:
+        #         dict1[i]=[1]
+        #     else:
+        #         dict1[i]+=[1]
+        # for j in t:
+        #     if j not in dict2:
+        #         dict2[j]=[1]
+        #     else:
+        #         dict2[j]+=[1]
+        # if dict1==dict2:
+        #     return True
+        # else:
+        #     return False    
+        if len(s) != len(t):
+            return False
+        for i in set(s):
+            if t.count(i)!=s.count(i):
+                return False
+        return True
